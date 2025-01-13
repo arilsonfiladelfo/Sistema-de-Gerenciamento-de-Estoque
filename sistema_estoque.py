@@ -74,13 +74,14 @@ def menu_programa(estoque):
         print('Sair - Encerrar o programa.')
         opcao_menu = input('Escolha: ').strip().lower()
 
-        if opcao_menu == '1':
+        #Comparar input convertido para minúsculo
+        if opcao_menu == '1' or opcao_menu == 'adicionar' or opcao_menu == 'atualizar':
             estoque = adicionar_atualizar_estoque(estoque)
-        elif opcao_menu == '2':
+        elif opcao_menu == '2' or opcao_menu == 'remover':
             estoque = remover_produtos_indisponiveis(estoque)
-        elif opcao_menu == '3':
+        elif opcao_menu == '3' or opcao_menu == 'consultar':
             consultar_estoque(estoque)
-        elif opcao_menu == 'sair':
+        elif opcao_menu == 'sair':  # Vai funcionar para 'sair', 'Sair', 'SAIR', etc.
             salvar_estoque(estoque)
             print('Encerrando o programa...')
             break
